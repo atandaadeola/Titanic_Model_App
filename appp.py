@@ -8,7 +8,7 @@ st.set_page_config(page_title="Titanic Survival Predictor", page_icon="🚢")
 # Load the trained model once and cache it across reruns/sessions
 @st.cache_resource
 def load_model():
-    return joblib.load("models/forest_model.joblib")
+    return joblib.load("Models/forest_model.joblib")
 
 
 random_forest = load_model()
@@ -66,7 +66,7 @@ st.title("Titanic Survival Predictor")
 st.write("Enter a passenger's details and see if our random forest thinks they'd survive.")
 
 with st.form("passenger_form"):
-    st.text_input("Name", placeholder="e.g. Benjamin Ogbonna", key="name")
+    st.text_input("Name", placeholder="e.g. Atanda Adeola", key="name")
     st.radio(
         "Passenger Class (1 = First)", [1, 2, 3],
         horizontal=True, key="pclass",
